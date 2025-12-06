@@ -331,14 +331,14 @@ def MergeData():
         merged = {**weapon, **spell}
         combined.append(merged)
 
-    with open('combined_horizontal.json', 'w') as f:
+    with open('BuildSet.json', 'w') as f:
         for item in combined:
             f.write(json.dumps(item) + '\n')
     
     # Load into pandas DataFrame
-    data = pd.read_json('combined_horizontal.json', lines=True) # Load combined data
+    data = pd.read_json('BuildSet.json', lines=True) # Load combined data
      # Save combined data as CSV
-    data.to_csv('combined_horizontal.csv', index=False) # Save as CSV 
+    data.to_csv('BuildSet.csv', index=False) # Save as CSV 
     return data
 
 def main():
