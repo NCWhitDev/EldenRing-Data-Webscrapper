@@ -1,0 +1,74 @@
+# def armor_stats(driver, href):
+    #     driver.get(href)
+    #     time.sleep(3)
+    #     # Implement armor stats extraction similar to spell_stats
+    #     Phy_DEF = 0
+    #     Strike_DEF = 0
+    #     Slash_DEF = 0
+    #     Pierce_DEF = 0
+    #     Magic_DEF = 0
+    #     Fire_DEF = 0
+    #     Lighting_DEF = 0
+    #     Holy_DEF = 0
+    #     Armorinfo = {
+    #         'Physical': Phy_DEF,
+    #         'Strike': Strike_DEF,
+    #         'Slash': Slash_DEF,
+    #         'Pierce': Pierce_DEF,
+    #         'Magic': Magic_DEF,
+    #         'Fire': Fire_DEF,
+    #         'Lighting': Lighting_DEF,
+    #         'Holy': Holy_DEF
+    #     }
+    #     # Write to JSON File
+    #     file_path = "armor.json"
+    #     json_line = json.dumps(Armorinfo)
+    #     with open(file_path, 'a') as fp:
+    #         fp.write(json_line + '\n')
+
+    # # 3. We need to get armor info from the Elden Ring Wiki
+    # URL = 'https://eldenring.wiki.fextralife.com/Armor+Comparison+Tables'
+    # driver.get(URL)
+    # time.sleep(3)  # Wait for the page to load
+    # armor_index = driver.find_elements(By.XPATH, "/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/div[2]/div/div/div/div[2]/div/div[4]/div[1]/div[4]/div[1]//a[@class='wiki_link wiki_tooltip']") # Finds all a tags at xpath
+    # armors = [elem.get_attribute('href') for elem in armor_index] # Extract href attributes
+    # set(armors)  # Remove duplicates if any
+    # for armor in armors:
+    #     armor_stats(driver, armor)
+
+From Scrapper.py --> main()
+# ================================================================
+
+def CreateOwnBuild():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("Welcome to builder+, here you can construct your own build!")
+    print("Please enter: Vigor, Mind, Endurance, Strength, Dexterity, Intelligence, Faith, Arcane.\n")
+    # Requirements
+    Vigor = input("Please enter your Vigor stat: ")
+    Mind = input("Please enter your Mind stat: ")
+    Endurance = input("Please enter your Endurance stat: ")
+    Strength = input("Please enter your Strength stat: ")
+    Dexterity = input("Please enter your Dexterity stat: ")
+    Intelligence = input("Please enter your Intelligence stat: ")
+    Faith = input("Please enter your Faith stat: ")
+    Arcane = input("Please enter your Arcane stat: ")
+    # Items
+    print("Please enter the weapon you will use, otherwise enter None.")
+    MWeapon = input("Please enter the main weapon you will use.")
+    MSpells = input("Please enter a main spell you will use.")
+    ArmorSet = input("Please enter the armor you will wear.")    
+
+    CustomBuild = {
+        "PlayerHealth" : Vigor,
+        "PlayerMana" : Mind,
+        "Stamina" : Endurance,
+        "Strength" : Strength,
+        "Dexterity" : Dexterity,
+        "Intelligence" : Intelligence,
+        "Faith" : Faith,
+        "Arcane" : Arcane,
+        "MainWeapon" : MWeapon,
+        "MainSpells" : MSpells,
+        "ArmorSet" : ArmorSet,
+    }
+    return CustomBuild
