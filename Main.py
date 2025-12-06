@@ -223,8 +223,7 @@ def RandomForestRareSets():
     # ========================= Step 2: Prepare feature matrix and target vector =========================
     feature_columns = [
         'AttDMG', 'Crit', 'Magic_DMG', 'Fire_DMG', 
-        'Lighting_DMG', 'Holy_DMG', 'Weight',
-        'TotalReq', 'Required Intelligence', 
+        'Lighting_DMG', 'Holy_DMG', 'Required Intelligence', 
         'Required Faith', 'Required Arcane']
     X = df[feature_columns].copy() # Feature matrix
     # Convert all to numeric and fill missing values
